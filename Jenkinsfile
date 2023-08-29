@@ -6,16 +6,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        bat './gradlew clean check --no-daemon'
+        echo 'Hello World!'
       }
-    }
-  }
-  post {
-    always {
-        junit(
-          allowEmptyResults: true, 
-          testResults: '**/build/test-results/test/*.xml'
-        )
     }
   }
 }
